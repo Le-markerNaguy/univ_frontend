@@ -1,6 +1,6 @@
 export async function checkAuth() {
   try {
-    const response = await fetch("http://localhost:4000/api/auth/me", {
+    const response = await fetch("https://univ-backend-ynxx.onrender.com/api/auth/me", {
       method: "GET",
       credentials: "include",
     })
