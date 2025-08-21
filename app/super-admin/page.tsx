@@ -90,12 +90,12 @@ export default function SuperAdminPage() {
   const fetchAllData = async () => {
     try {
       const [universitesRes, adminsRes, facultesRes, filieresRes, niveauxRes, modulesRes] = await Promise.all([
-        fetch("http://localhost:4000/api/super-admin/universites", { credentials: "include" }),
-        fetch("http://localhost:4000/api/super-admin/admins", { credentials: "include" }),
-        fetch("http://localhost:4000/api/facultes", { credentials: "include" }),
-        fetch("http://localhost:4000/api/filieres", { credentials: "include" }),
-        fetch("http://localhost:4000/api/niveaux", { credentials: "include" }),
-        fetch("http://localhost:4000/api/modules", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/super-admin/universites", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/super-admin/admins", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/facultes", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/filieres", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/niveaux", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/modules", { credentials: "include" }),
       ])
 
       if (universitesRes.ok) setUniversites(await universitesRes.json())
@@ -112,7 +112,7 @@ export default function SuperAdminPage() {
   const handleCreateUniversite = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:4000/api/super-admin/universites", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/super-admin/universites", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -135,7 +135,7 @@ export default function SuperAdminPage() {
   const handleCreateAdmin = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:4000/api/super-admin/admins", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/super-admin/admins", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -163,7 +163,7 @@ export default function SuperAdminPage() {
   const handleCreateSuperAdmin = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:4000/api/super-admin/super-admins", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/super-admin/super-admins", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

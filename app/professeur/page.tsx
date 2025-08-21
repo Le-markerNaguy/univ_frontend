@@ -30,7 +30,7 @@ export default function ProfesseurPage() {
 
   const fetchProfil = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/professeur/profil", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/professeur/profil", {
         credentials: "include",
       })
       if (response.ok) {
@@ -44,7 +44,7 @@ export default function ProfesseurPage() {
 
   const fetchEtudiants = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/professeur/etudiants-par-niveau", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/professeur/etudiants-par-niveau", {
         credentials: "include",
       })
       if (response.ok) {
@@ -59,7 +59,7 @@ export default function ProfesseurPage() {
   const handleSaisirNote = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:4000/api/professeur/saisir-note", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/professeur/saisir-note", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

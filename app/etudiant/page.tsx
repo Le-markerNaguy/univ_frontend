@@ -19,7 +19,7 @@ export default function EtudiantPage() {
 
   const fetchProfil = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/etudiants/profil", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/etudiants/profil", {
         credentials: "include",
       })
       if (response.ok) {
@@ -33,7 +33,7 @@ export default function EtudiantPage() {
 
   const fetchNotes = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/etudiants/notes", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/etudiants/notes", {
         credentials: "include",
       })
       if (response.ok) {

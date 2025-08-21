@@ -200,7 +200,7 @@ export default function AdminPage() {
 
   const fetchUserData = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/auth/me", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/auth/me", {
         credentials: "include",
       })
       if (response.ok) {
@@ -231,15 +231,15 @@ export default function AdminPage() {
         modulesRes,
         notesRes,
       ] = await Promise.all([
-        fetch("http://localhost:4000/api/etudiants", { credentials: "include" }),
-        fetch("http://localhost:4000/api/professeurs", { credentials: "include" }),
-        fetch("http://localhost:4000/api/semestres", { credentials: "include" }),
-        fetch("http://localhost:4000/api/ues", { credentials: "include" }),
-        fetch("http://localhost:4000/api/facultes", { credentials: "include" }),
-        fetch("http://localhost:4000/api/filieres", { credentials: "include" }),
-        fetch("http://localhost:4000/api/niveaux", { credentials: "include" }),
-        fetch("http://localhost:4000/api/modules", { credentials: "include" }),
-        fetch("http://localhost:4000/api/notes", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/etudiants", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/professeurs", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/semestres", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/ues", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/facultes", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/filieres", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/niveaux", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/modules", { credentials: "include" }),
+        fetch("https://univ-backend-ynxx.onrender.com/api/notes", { credentials: "include" }),
       ])
 
       if (etudiantsRes.ok) {
@@ -328,7 +328,7 @@ export default function AdminPage() {
         universiteId: userData?.universiteId || 1,
       })
 
-      const response = await fetch("http://localhost:4000/api/etudiants", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/etudiants", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -376,7 +376,7 @@ export default function AdminPage() {
         universiteId: userData?.user?.universiteId || 1,
       })
 
-      const response = await fetch("http://localhost:4000/api/professeurs", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/professeurs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -411,7 +411,7 @@ export default function AdminPage() {
     try {
       console.log("[v0] Données envoyées pour semestre:", semestreData)
 
-      const response = await fetch("http://localhost:4000/api/semestres", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/semestres", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -454,7 +454,7 @@ export default function AdminPage() {
     try {
       console.log("[v0] Données UE envoyées:", ueData)
 
-      const response = await fetch("http://localhost:4000/api/ues", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/ues", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -488,7 +488,7 @@ export default function AdminPage() {
     setError("")
 
     try {
-      const response = await fetch("http://localhost:4000/api/notes", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/notes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -533,7 +533,7 @@ export default function AdminPage() {
         adminUniversiteId: userData?.universiteId, // Debug
       })
 
-      const response = await fetch("http://localhost:4000/api/facultes", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/facultes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -575,7 +575,7 @@ export default function AdminPage() {
   const handleCreateFiliere = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:4000/api/filieres", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/filieres", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -601,7 +601,7 @@ export default function AdminPage() {
   const handleCreateNiveau = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:4000/api/niveaux", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/niveaux", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -630,7 +630,7 @@ export default function AdminPage() {
     setError("")
 
     try {
-      const response = await fetch("http://localhost:4000/api/modules", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/modules", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -666,7 +666,7 @@ export default function AdminPage() {
     }
 
     try {
-      const response = await fetch(`http://localhost:4000/api/facultes/${faculteId}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/facultes/${faculteId}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -695,7 +695,7 @@ export default function AdminPage() {
     if (!editingFaculte) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/facultes/${editingFaculte.id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/facultes/${editingFaculte.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -727,7 +727,7 @@ export default function AdminPage() {
     if (!confirm("Êtes-vous sûr de vouloir supprimer cette filière ?")) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/filieres/${filiereId}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/filieres/${filiereId}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -754,7 +754,7 @@ export default function AdminPage() {
     if (!editingFiliere) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/filieres/${editingFiliere.id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/filieres/${editingFiliere.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -783,7 +783,7 @@ export default function AdminPage() {
     if (!confirm("Êtes-vous sûr de vouloir supprimer ce niveau ?")) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/niveaux/${niveauId}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/niveaux/${niveauId}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -810,7 +810,7 @@ export default function AdminPage() {
     if (!editingNiveau) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/niveaux/${editingNiveau.id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/niveaux/${editingNiveau.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -839,7 +839,7 @@ export default function AdminPage() {
     if (!confirm("Êtes-vous sûr de vouloir supprimer ce semestre ?")) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/semestres/${semestreId}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/semestres/${semestreId}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -866,7 +866,7 @@ export default function AdminPage() {
     if (!editingSemestre) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/semestres/${editingSemestre.id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/semestres/${editingSemestre.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -895,7 +895,7 @@ export default function AdminPage() {
     if (!confirm("Êtes-vous sûr de vouloir supprimer cette UE ?")) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/ues/${ueId}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/ues/${ueId}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -922,7 +922,7 @@ export default function AdminPage() {
     if (!editingUE) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/ues/${editingUE.id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/ues/${editingUE.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -951,7 +951,7 @@ export default function AdminPage() {
     if (!confirm("Êtes-vous sûr de vouloir supprimer ce module ?")) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/modules/${moduleId}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/modules/${moduleId}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -978,7 +978,7 @@ export default function AdminPage() {
     if (!editingModule) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/modules/${editingModule.id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/modules/${editingModule.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -1010,7 +1010,7 @@ export default function AdminPage() {
     if (!confirm("Êtes-vous sûr de vouloir supprimer cet étudiant ?")) return
 
     try {
-      const response = await fetch(`http://localhost:4000/api/etudiants/${id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/etudiants/${id}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -1034,7 +1034,7 @@ export default function AdminPage() {
 
   const handleSaveEtudiant = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/etudiants/${id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/etudiants/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -1064,7 +1064,7 @@ export default function AdminPage() {
 
     try {
       console.log("[v0] Suppression professeur ID:", id)
-      const response = await fetch(`http://localhost:4000/api/professeurs/${id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/professeurs/${id}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -1099,7 +1099,7 @@ export default function AdminPage() {
 
   const handleSaveProfesseur = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/professeurs/${id}`, {
+      const response = await fetch(`https://univ-backend-ynxx.onrender.com/api/professeurs/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -1126,7 +1126,7 @@ export default function AdminPage() {
 
   const handleUpdateProfesseurModules = async (professeurId: string, modulesIds: number[]) => {
     try {
-      const response = await fetch("http://localhost:4000/api/admin/professeurs/modules", {
+      const response = await fetch("https://univ-backend-ynxx.onrender.com/api/admin/professeurs/modules", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
