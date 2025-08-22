@@ -19,7 +19,7 @@ export async function checkAuth() {
 
 export async function logout() {
   try {
-    const response = await fetch("http://localhost:4000/api/auth/logout", {
+    const response = await fetch("https://univ-backend-ynxx.onrender.com/api/auth/logout", {
       method: "POST",
       credentials: "include",
     })
